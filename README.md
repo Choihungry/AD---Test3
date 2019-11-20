@@ -1,42 +1,4 @@
-# AD-Test3
-### scatter3D
-```{r}
-install.packages("plotly")
-library("plotly")
-school_df <- read.csv(file.choose())
-packageVersion('plotly')
--------------
-p <- ggplot(data = school_df, aes(
-  x = school_df$지역, 
-  y = school_df$school,  
-  col = drv
-)) + geom_point()
-
-ggplotly(p)
-
--------------
-devtools::install_github("ropensci/plotly")
-Sys.setenv("plotly_username"="Choihungry")
-Sys.setenv("plotly_api_key"="83Y53XPJdOZRwuBV9pQ2")
-
-p <- plot_ly(data = school_df, x = ~school_df$school, y = ~school_df$schooler,
-             marker = list(size = 25,
-                           color = 'rgba(255, 182, 193, .9)',
-                           line = list(color = 'rgba(152, 0, 0, .8)',
-                                       width = 2)))
-
-p <- plot_ly(data = school_df, x = ~school_df$schooler, z = ~school_df$지역, y=~school_df$student,
-             marker = list(size = 10,
-                           color = 'rgba(255, 182, 193, .9)',
-                           line = list(color = 'rgba(152, 0, 0, .8)',
-                                       width = 2)))
-p
-layout(title = '서울 시 구별', yaxis = list(zeroline = FALSE), xaxis = list(zeroline = FALSE), zaxis = list(zeroline = FALSE))
-
-
-chart_link = api_create(p, filename="scatter-styled")
-chart_link
-```
+# AD-Test3 지도시각화 코드 추가제출
 ### 지도시각화
 ```{r}
 # 설치
